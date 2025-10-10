@@ -8,6 +8,7 @@ from contextlib import asynccontextmanager
 from app.config import settings
 from app.db.session import init_db, close_db
 from app.utils.logger import setup_logger
+from app.routes import chat
 
 logger = setup_logger(__name__)
 
@@ -50,6 +51,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(chat.router)
 
 
 @app.get("/")

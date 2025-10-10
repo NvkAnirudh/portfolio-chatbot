@@ -15,9 +15,12 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     """Chat response to frontend"""
-    response: str = Field(..., description="Bot response")
     session_id: str = Field(..., description="Session ID")
-    intent: Optional[str] = Field(None, description="Detected intent")
+    message: str = Field(..., description="Bot response message")
+    intent: str = Field(..., description="Detected primary intent")
+    tokens_used: int = Field(0, description="Total tokens used")
+    cost_usd: float = Field(0.0, description="Cost in USD")
+    cached: bool = Field(False, description="Whether prompt caching was used")
 
 
 # Message Schemas
