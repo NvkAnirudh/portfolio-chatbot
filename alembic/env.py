@@ -18,8 +18,9 @@ from app.models.db_models import Base
 config = context.config
 
 # Override sqlalchemy.url with value from settings
-# Replace asyncpg with psycopg2 for synchronous migrations
-sync_db_url = settings.database_url.replace("postgresql+asyncpg://", "postgresql://")
+# Use async_database_url which handles Railway's postgresql:// format
+# Then convert to sync psycopg2 for migrations
+sync_db_url = settings.async_database_url.replace("postgresql+asyncpg://", "postgresql://")
 config.set_main_option("sqlalchemy.url", sync_db_url)
 
 # Interpret the config file for Python logging.
