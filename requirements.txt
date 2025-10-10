@@ -1,0 +1,26 @@
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.1
+
+# LLM
+anthropic==0.43.0
+
+# Databases
+redis==5.2.1
+sqlalchemy==2.0.36
+asyncpg==0.30.0
+alembic==1.14.0
+
+# Security & Rate Limiting
+slowapi==0.1.9
+
+# Core
+python-dotenv==1.0.1
+pydantic==2.10.5
+pydantic-settings==2.7.0
+
+# HTTP Client
+httpx==0.28.1
+
+# CORS
+python-multipart==0.0.20
