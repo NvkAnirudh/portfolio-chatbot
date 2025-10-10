@@ -203,6 +203,26 @@ class CostTrackingRepository:
         return requests or 0
 
     @staticmethod
+    async def get_today_tracking(db: AsyncSession) -> Optional[dict]:
+        """Get today's complete cost tracking data"""
+        today = datetime.utcnow().replace(hour=0, minute=0, second=0, microsecond=0)
+        result = await db.execute(
+            select(CostTracking).where(CostTracking.date == today)
+        )
+        tracking = result.scalar_one_or_none()
+
+        if not tracking:
+            return None
+
+        return {
+            "total_tokens": tracking.total_tokens,
+            "cache_read_tokens": tracking.cache_reads,  # Approximate - not exact token count
+            "requests": tracking.total_requests,
+            "total_cost_usd": tracking.total_cost_usd,
+            "cache_writes": tracking.cache_writes
+        }
+
+    @staticmethod
     async def get_recent_daily_costs(db: AsyncSession, days: int = 7) -> List[CostTracking]:
         """Get recent daily cost tracking records"""
         start_date = datetime.utcnow() - timedelta(days=days)

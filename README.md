@@ -91,10 +91,37 @@ The API will be available at `http://127.0.0.1:8000`
 
 ## API Endpoints
 
+### Chat Endpoints
+- `POST /api/chat` - Send a chat message and get AI response
+- `GET /api/session/{session_id}/history` - Get conversation history for a session
+- `DELETE /api/session/{session_id}` - Clear conversation history
+- `GET /api/sessions/stats` - Get statistics about active sessions
+
+### Monitoring Endpoints
 - `GET /` - Root endpoint with API info
-- `GET /health` - Health check endpoint
-- `POST /api/chat` - Send chat message (Coming soon)
-- `GET /api/analytics` - Get conversation analytics (Coming soon)
+- `GET /health` - Basic health check (for Railway)
+- `GET /health/detailed` - Comprehensive health check (DB, Redis, LLM)
+- `GET /metrics` - Application metrics (sessions, costs, tokens)
+- `GET /api/budget/status` - Cost budget status and utilization
+
+### Example Requests
+
+**Chat with the AI:**
+```bash
+curl -X POST http://localhost:8000/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "What are your Python skills?"}'
+```
+
+**Check budget status:**
+```bash
+curl http://localhost:8000/api/budget/status
+```
+
+**Get detailed health:**
+```bash
+curl http://localhost:8000/health/detailed
+```
 
 ## Development Phases
 
@@ -105,10 +132,10 @@ The API will be available at `http://127.0.0.1:8000`
 - [x] **Phase 5**: Context Loader
 - [x] **Phase 6**: Conversation History Manager
 - [x] **Phase 7**: LLM Service Integration
-- [ ] **Phase 8**: API Endpoints
-- [ ] **Phase 9**: Integration & Testing
-- [ ] **Phase 10**: Security & Rate Limiting
-- [ ] **Phase 11**: Deployment & Monitoring
+- [x] **Phase 8**: API Endpoints
+- [x] **Phase 9**: Integration & Testing
+- [x] **Phase 10**: Security & Rate Limiting
+- [x] **Phase 11**: Deployment & Monitoring
 
 ---
 
@@ -416,106 +443,109 @@ Each message stored with:
 ### Phase 7: LLM Service Integration ✅
 **Completed**: Anthropic Claude API integration with prompt caching and cost tracking
 
+### Phase 8: API Endpoints ✅
+**Completed**: FastAPI endpoints for chat, session management, and monitoring
+
 **Files Created:**
-- `app/services/llm_service.py` (261 lines) - LLM service with caching and cost calculation
-- `tests/test_llm_service.py` (269 lines) - Comprehensive unit tests
+- `app/routes/chat.py` - Complete chat API with all endpoints
+- `test_api.py` - API integration tests
 
-**Key Features:**
-- **Claude 3.5 Haiku** integration via Anthropic SDK
-- **Prompt Caching**: 90% cost reduction on repeated queries (ephemeral cache)
-- **Automatic Cost Calculation**: Real-time cost tracking from API usage stats
-- **Built-in Pricing**: Up-to-date Claude 3.5 Haiku pricing ($0.80/$4.00 per million tokens)
-- **Greeting Optimization**: Zero-cost canned responses for simple greetings
-- **Error Handling**: Graceful handling of API errors
-- **Conversation Context**: Support for multi-turn conversations
+**Endpoints:**
+- `POST /api/chat` - Main chat endpoint
+- `GET /api/session/{session_id}/history` - Get conversation history
+- `DELETE /api/session/{session_id}` - Clear session
+- `GET /api/sessions/stats` - Session statistics
+- `GET /api/budget/status` - Budget monitoring
 
-**How It Works:**
-```python
-from app.services.llm_service import llm_service
+**Features:**
+- Orchestrates all services (intent, context, conversation, LLM)
+- PostgreSQL message persistence
+- Redis session management
+- Cost tracking and budget enforcement
+- Session ID generation and validation
 
-# Generate response with caching
-response_text, usage_stats = llm_service.generate_response(
-    user_message="What are your Python skills?",
-    portfolio_context=portfolio_context,  # From context_loader
-    conversation_history=history,          # From conversation_manager
-    use_cache=True                         # Enable prompt caching
-)
+### Phase 9: Integration & Testing ✅
+**Completed**: Full integration with PostgreSQL persistence and comprehensive testing
 
-# usage_stats contains:
-# {
-#     "input_tokens": 500,
-#     "output_tokens": 100,
-#     "cache_creation_tokens": 1500,  # First time
-#     "cache_read_tokens": 0,
-#     "total_tokens": 2100,
-#     "cost_usd": 0.00234
-# }
-```
+**Key Changes:**
+- Added PostgreSQL persistence to chat endpoints
+- Fixed repository method calls (static methods)
+- Integrated database session management
+- Tested end-to-end chat flow
+- Verified dual storage (Redis + PostgreSQL)
 
-**Prompt Caching Benefits:**
-```
-Without caching:
-- Input: 1500 tokens × $0.80/M = $0.0012
-- Output: 100 tokens × $4.00/M = $0.0004
-- Total: $0.0016 per request
+**Testing:**
+- Started PostgreSQL via Docker
+- Ran Alembic migrations
+- Verified message persistence
+- Tested greeting responses (0 tokens)
+- Tested complex queries (2,385 tokens)
 
-With caching (after first request):
-- Cache read: 1500 tokens × $0.08/M = $0.00012 (90% savings!)
-- Output: 100 tokens × $4.00/M = $0.0004
-- Total: $0.00052 per request (67% total savings)
-```
+### Phase 10: Security & Rate Limiting ✅
+**Completed**: Multi-layer security, rate limiting, and cost controls
 
-**Pricing (Claude 3.5 Haiku):**
-- Input tokens: $0.80 per million
-- Output tokens: $4.00 per million
-- Cache creation: $1.00 per million (25% premium)
-- Cache read: $0.08 per million (90% discount)
+**Files Created:**
+- `app/middleware/rate_limiter.py` - Rate limiting middleware (10 req/min)
+- `app/middleware/security.py` - Security headers and input validation
+- `app/middleware/cost_control.py` - Daily budget enforcement
+- `test_security.py` - Security feature tests
 
-**System Prompt Structure:**
-```
-You are an AI assistant for Anirudh Nuti's portfolio website...
+**Security Features:**
+- Security headers (X-Content-Type-Options, X-Frame-Options, CSP)
+- Input sanitization (XSS protection, length validation)
+- Session ID validation (UUID v4 format)
+- Rate limiting (10 requests/minute per IP)
+- Cost budget controls ($5/day, 1000 requests/day)
+- CORS protection
+- SQL injection protection (parameterized queries)
 
-PORTFOLIO INFORMATION:
-=== GENERAL ===
-[portfolio context from context_loader]
+**Middleware Stack:**
+1. Security Headers (all responses)
+2. Rate Limiting (IP-based)
+3. Cost Control (budget enforcement)
+4. CORS (configurable origins)
 
-=== SKILLS ===
-[relevant skills]
+### Phase 11: Deployment & Monitoring ✅
+**Completed**: Railway deployment configuration and comprehensive monitoring
 
-GUIDELINES:
-1. Answer accurately based on portfolio information
-2. Be professional, friendly, and concise
-3. Highlight achievements and measurable impact
-...
-```
+**Files Created:**
+- `railway.json` - Railway deployment configuration
+- `.env.production.example` - Production environment template
+- `docs/DEPLOYMENT.md` - Complete deployment guide (550+ lines)
+- Enhanced health check endpoints
+- Application metrics endpoint
 
-**Cost Estimation:**
-```python
-# Estimate cost before making request
-estimated_cost = llm_service.estimate_cost(
-    input_tokens=1000,
-    output_tokens=200,
-    use_cache=True,
-    cache_hit=True  # Cache already exists
-)
-# Returns: 0.00088 USD
-```
+**Monitoring Endpoints:**
+- `/health` - Basic health (for Railway load balancer)
+- `/health/detailed` - Comprehensive health check
+  - Database connectivity
+  - Redis connectivity
+  - LLM configuration
+  - System information
+- `/metrics` - Application metrics
+  - Active sessions
+  - Total messages
+  - Cost tracking
+  - Budget utilization
+  - Token usage
+  - Configuration details
 
-**Test Coverage:**
-- 17 unit tests, all passing ✅
-- 93% code coverage for llm_service.py
-- Mocked Anthropic API responses
-- Cost calculation accuracy tests
-- Prompt caching verification
-- Error handling (API errors, generic errors)
-- System prompt construction
-- Greeting response optimization
+**Deployment Features:**
+- Railway.json with healthcheck configuration
+- Automatic migration on deployment
+- Environment variable templates
+- Database backup instructions
+- Troubleshooting guide
+- Production security checklist
+- Cost optimization guide
 
-**Integration Points:**
-- Intent Classifier → determines context needed
-- Context Loader → provides portfolio information
-- Conversation Manager → supplies conversation history
-- **Next**: API Endpoints will orchestrate all services
+**Ready for Production:**
+- ✅ All phases complete
+- ✅ Comprehensive documentation
+- ✅ Security hardened
+- ✅ Monitoring enabled
+- ✅ Cost controls active
+- ✅ Railway deployment ready
 
 ---
 
