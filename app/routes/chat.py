@@ -21,6 +21,9 @@ from app.services.llm_service import llm_service
 from app.db.session import get_db
 from app.db.repository import SessionRepository, MessageRepository, CostTrackingRepository
 from app.utils.logger import setup_logger
+from app.middleware.rate_limiter import limiter
+from app.middleware.security import sanitize_input, validate_session_id
+from app.middleware.cost_control import check_cost_budget
 
 logger = setup_logger(__name__)
 
@@ -29,8 +32,8 @@ router = APIRouter(prefix="/api", tags=["chat"])
 
 @router.post("/chat", response_model=ChatResponse)
 async def chat(
-    request: ChatRequest,
     http_request: Request,
+    request: ChatRequest,
     db: AsyncSession = Depends(get_db)
 ) -> ChatResponse:
     """
@@ -54,10 +57,13 @@ async def chat(
     try:
         # Generate session ID if not provided
         session_id = request.session_id or str(uuid.uuid4())
-        user_message = request.message.strip()
 
-        if not user_message:
-            raise HTTPException(status_code=400, detail="Message cannot be empty")
+        # Validate session ID format if provided
+        if request.session_id and not validate_session_id(request.session_id):
+            raise HTTPException(status_code=400, detail="Invalid session ID format")
+
+        # Sanitize and validate user message
+        user_message = sanitize_input(request.message, max_length=1000)
 
         logger.info(f"Processing chat request for session: {session_id}")
 
@@ -316,3 +322,20 @@ async def get_sessions_stats():
     except Exception as e:
         logger.error(f"Error retrieving session stats: {e}")
         raise HTTPException(status_code=500, detail="Failed to retrieve session stats")
+
+
+@router.get("/budget/status")
+async def get_budget_status(db: AsyncSession = Depends(get_db)):
+    """
+    Get current cost budget status.
+
+    Returns:
+        Budget utilization and remaining capacity
+    """
+    try:
+        budget_status = await check_cost_budget(db)
+        return budget_status
+
+    except Exception as e:
+        logger.error(f"Error retrieving budget status: {e}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve budget status")

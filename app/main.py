@@ -1,14 +1,19 @@
 """
 FastAPI Application Entry Point
 """
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 from contextlib import asynccontextmanager
+from slowapi.errors import RateLimitExceeded
 
 from app.config import settings
 from app.db.session import init_db, close_db
 from app.utils.logger import setup_logger
 from app.routes import chat
+from app.middleware.rate_limiter import limiter, RateLimitMiddleware
+from app.middleware.security import SecurityHeadersMiddleware, InputValidationMiddleware
+from app.middleware.cost_control import CostControlMiddleware
 
 logger = setup_logger(__name__)
 
@@ -43,7 +48,38 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Configure CORS
+# Register rate limiter state
+app.state.limiter = limiter
+
+
+# Exception handler for rate limiting
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    """Handle rate limit exceeded errors"""
+    return JSONResponse(
+        status_code=429,
+        content={
+            "detail": "Rate limit exceeded. Please try again later.",
+            "retry_after": "60 seconds"
+        },
+        headers={"Retry-After": "60"}
+    )
+
+
+# Add middleware (order matters - last added is executed first)
+# 1. Security headers (outermost - applies to all responses)
+app.add_middleware(SecurityHeadersMiddleware)
+
+# 2. Rate limiting
+app.add_middleware(RateLimitMiddleware)
+
+# 3. Input validation (disabled temporarily - implemented at endpoint level)
+# app.add_middleware(InputValidationMiddleware)
+
+# 4. Cost control
+app.add_middleware(CostControlMiddleware)
+
+# 5. CORS (should be one of the last)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
