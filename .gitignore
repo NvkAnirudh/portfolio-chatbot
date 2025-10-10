@@ -55,6 +55,8 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+coverage.xml
+.tox/
 
 # Alembic
 alembic/versions/*.pyc

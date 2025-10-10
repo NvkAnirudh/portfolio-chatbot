@@ -1,27 +1,67 @@
 NAME: Anirudh Nuti
 
-ROLE: Full-Stack Developer & AI/ML Enthusiast
+CURRENT ROLE: Founding Engineer at Nidhi AI (Oct 2025 - Present)
+
+PROFESSIONAL TITLE: Data Engineer & Full-Stack Developer specializing in AI/ML Solutions
 
 ABOUT:
-Anirudh is a passionate full-stack developer with expertise in building modern web applications and implementing AI/ML solutions. He combines strong technical skills with a focus on creating user-friendly, scalable applications. His work spans across frontend development, backend systems, and artificial intelligence/machine learning projects.
+Anirudh Nuti is a highly skilled data engineer and full-stack developer with a Master's degree in Applied Data Analytics from Boston University. He specializes in building production-ready AI/ML systems, data engineering pipelines, and scalable full-stack applications. With experience as a Founding Engineer, Data Engineer, and Data Scientist across multiple companies, Anirudh has delivered measurable impact including $250K+ in combined cost savings and productivity gains, 80% reduction in manual effort through automation, and 95%+ accuracy in AI-powered systems.
+
+EDUCATION:
+- Master of Science (MS) in Applied Data Analytics - Boston University (2023-2024)
+  - Teaching Assistant for CSS 677 Data Science with Python under Prof. Eugene Pinsky
+  - GPA: 3.81/4.0
+- Bachelor of Technology (BTech) in Computer Science - GITAM Deemed University (2016-2020)
+  - GPA: 8.55/10.0
+
+CORE EXPERTISE:
+- Data Engineering: Apache Spark, PySpark, Apache Kafka, Apache Airflow, dbt, Dagster, AWS Glue
+- AI/ML & GenAI: Deep Learning, NLP, Computer Vision, LLMs, RAG, Fine-Tuning, LangChain, OpenAI APIs
+- Cloud & Databases: AWS (S3, Lambda, Glue, Redshift, SageMaker), PostgreSQL, BigQuery, Snowflake
+- Full-Stack Development: Python, FastAPI, React, Next.js, TypeScript, Docker, Kubernetes
+- Languages: Python (Advanced), R, SQL
+
+CAREER HIGHLIGHTS:
+- Founding Engineer at Nidhi AI: Architected production PostgreSQL schema, built Text2SQL system with Agentic AI
+- Data Engineer at DEtermined: Led migration from Airbyte to custom Python ETL, 5x performance improvement
+- Data Scientist at Stealth Startup: Built NLP pipeline with 95% accuracy for personalized email outreach
+- 6 companies total with consistent track record of automation, cost savings, and system optimization
+
+KEY PROJECTS:
+- LinkedIn Post Generator (MCP): Automates LinkedIn post generation from YouTube videos using Model Context Protocol
+- Real-Time E-Commerce Analytics: Kafka + Spark Streaming + PostgreSQL for real-time insights
+- DEtermined Platform: Full-stack data engineering education platform with 7,000+ users
 
 CONTACT INFORMATION:
 Email: nvkanirudh124@gmail.com
-Location: Available for remote work
-Availability: Open to remote opportunities and collaborations
+LinkedIn: https://www.linkedin.com/in/anirudh-nuti
+GitHub: https://github.com/NvkAnirudh
+Portfolio: https://www.anirudh-nuti.com
+Location: Boston, MA (Open to remote opportunities)
+Availability: Open to data engineering, AI/ML engineering, and full-stack development roles
 
 WORK PREFERENCES:
-- Remote work opportunities
-- Full-stack development roles
-- AI/ML implementation projects
-- Collaboration on innovative solutions
+- Data Engineering & AI/ML roles
+- Full-stack development with modern tech stacks
+- Remote or hybrid opportunities
+- Innovative projects involving GenAI, LLMs, RAG systems
+- Collaboration on scalable data pipelines and intelligent applications
+
+MEASURABLE IMPACT:
+- $250K+ in combined cost savings and productivity gains
+- 80% reduction in manual effort through automation
+- 95%+ accuracy in AI-powered systems
+- 5x performance improvements in data pipelines
+- Built systems serving 7,000+ users
 
 WHAT I CAN HELP WITH:
 I'm Anirudh's AI assistant. I can answer questions about:
-- Technical skills and expertise
-- Project portfolio and accomplishments
-- Professional experience
-- Educational background
-- How to get in touch with Anirudh
+- Technical skills and expertise (Data Engineering, AI/ML, Full-Stack Development)
+- Project portfolio and accomplishments (3 major projects with demos and GitHub repos)
+- Professional experience (6 companies, Founding Engineer to Data Scientist roles)
+- Educational background (MS from Boston University, BTech in Computer Science)
+- How to get in touch with Anirudh for job opportunities or collaborations
+- Specific technologies: Python, PySpark, Kafka, Airflow, AWS, FastAPI, React, LLMs, RAG systems
+- Teaching experience and academic achievements
 
-Feel free to ask me anything about Anirudh's professional background, technical capabilities, or how to contact him for opportunities!
+Feel free to ask me anything about Anirudh's professional background, technical capabilities, projects, or how to contact him for opportunities!
