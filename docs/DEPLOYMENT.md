@@ -2,6 +2,13 @@
 
 This guide covers deploying the Portfolio Chatbot API to Railway.
 
+> **🚨 IMPORTANT**: If you're getting "Field required" errors during deployment, see [RAILWAY_QUICK_START.md](./RAILWAY_QUICK_START.md) for the correct deployment order.
+
+## Quick Links
+
+- **Quick Start Guide**: [RAILWAY_QUICK_START.md](./RAILWAY_QUICK_START.md) - Follow this first!
+- **Troubleshooting**: See section below for common issues
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Railway Setup](#railway-setup)

@@ -9,8 +9,10 @@ from app.utils.logger import setup_logger
 logger = setup_logger(__name__)
 
 # Create async engine
+# Use async_database_url property which automatically converts Railway's DATABASE_URL
+# from postgresql:// to postgresql+asyncpg://
 engine = create_async_engine(
-    settings.database_url,
+    settings.async_database_url,
     echo=settings.debug,
     poolclass=NullPool,  # Use NullPool for async to avoid connection pool issues
     future=True,
