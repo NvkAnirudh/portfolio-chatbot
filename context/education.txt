@@ -1,0 +1,82 @@
+EDUCATION
+
+MASTER'S DEGREE:
+Boston University
+Master of Science (MS) in Applied Data Analytics
+
+Teaching Experience:
+- Teaching Assistant for CSS 677 Data Science with Python
+- Worked under Prof. Eugene Pinsky
+
+Graduate Coursework:
+- Data Analysis and Visualization with R
+- Foundations of Analytics with R
+- Data Science with Python
+- Data Mining
+- Machine Learning
+- Big Data Analytics
+- Web Analytics and Mining
+- Advanced Database Management Systems
+
+Key Learning Areas (Graduate):
+- Advanced statistical analysis and modeling
+- Machine learning algorithms and implementations
+- Big data technologies and distributed computing
+- Web analytics and data mining techniques
+- Database optimization and management
+- Python and R for data science
+- Data visualization and communication
+- Practical application of analytics to real-world problems
+
+BACHELOR'S DEGREE:
+GITAM Deemed University
+Bachelor of Technology (BTech) in Computer Science
+
+Undergraduate Foundation:
+- Computer Science fundamentals
+- Data structures and algorithms
+- Object-oriented programming
+- Software engineering principles
+- Database management systems
+- Computer networks and operating systems
+- Programming languages and paradigms
+
+TECHNICAL EXPERTISE DEVELOPED:
+
+Data Science & Analytics:
+- Python programming for data analysis (Pandas, NumPy, Scikit-learn)
+- R programming for statistical computing and visualization
+- Machine learning model development and deployment
+- Big data processing and analytics
+- Data mining techniques and algorithms
+- Statistical analysis and predictive modeling
+- Data visualization with various tools and libraries
+
+Database Management:
+- Advanced database design and optimization
+- SQL and NoSQL databases
+- Database administration and performance tuning
+- Data warehousing concepts
+
+Web Development & Software Engineering:
+- Full-stack web application development
+- Software design patterns and architecture
+- Version control and collaborative development
+- Testing and quality assurance practices
+
+ACADEMIC ACHIEVEMENTS:
+- Teaching Assistant role demonstrates strong grasp of Python and data science concepts
+- Comprehensive coursework covering the full data science pipeline
+- Hands-on experience with industry-standard tools and technologies
+- Strong foundation in both theoretical concepts and practical applications
+
+AREAS OF SPECIALIZATION:
+- Applied Data Analytics
+- Machine Learning and AI
+- Data Mining and Web Analytics
+- Big Data Technologies
+- Advanced Database Systems
+- Statistical Analysis and Modeling
+- Data Visualization
+
+Anirudh's education combines a solid computer science foundation from his undergraduate studies with specialized graduate-level training in data analytics, machine learning, and big data technologies. His teaching assistant experience further demonstrates his mastery of data science with Python.

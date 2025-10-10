@@ -1,0 +1,94 @@
+PROJECT PORTFOLIO
+
+PROJECT 1: LINKEDIN POST GENERATOR
+A Model Context Protocol (MCP) server that automates generating professional LinkedIn post drafts from YouTube videos. Streamlines content repurposing by extracting transcripts, summarizing content, and generating engaging LinkedIn posts.
+
+Technologies: MCP, Python, YouTube API, OpenAI, LLM
+
+Key Features:
+- YouTube Transcript Extraction: Automatically extract transcripts from any YouTube video
+- Content Summarization: Generate concise summaries with customizable tone and target audience
+- LinkedIn Post Generation: Create professional LinkedIn posts with customizable style and tone
+- All-in-One Workflow: Go from YouTube URL to LinkedIn post in a single operation
+- Customization Options: Adjust tone, audience, word count, and more to match personal brand
+- MCP Integration: Works seamlessly with AI assistants that support the Model Context Protocol
+
+Available Tools:
+- Set API Keys: Configure OpenAI and YouTube API keys
+- Check API Keys: Verify API key configuration status
+- Extract Transcript: Get transcript from YouTube video
+- Summarize Transcript: Create concise summary of video content with customizable tone (educational, inspirational, professional, conversational) and target audience
+- Generate LinkedIn Post: Create LinkedIn post from summary with options for tone (first-person, third-person, thought-leader) and call-to-action
+- All-in-One: Complete workflow from YouTube URL to LinkedIn post
+
+Links:
+- GitHub: https://github.com/NvkAnirudh/LinkedIn-Post-Generator
+- Smithery: https://smithery.ai/server/@NvkAnirudh/linkedin-post-generator
+- Demo Video: https://www.youtube.com/watch?v=pcg7Evskg_E
+
+---
+
+PROJECT 2: REAL-TIME E-COMMERCE SALES ANALYTICS PIPELINE
+An Apache Flink application designed for real-time sales analytics in an E-Commerce setting. Processes financial transaction data from Kafka, performs aggregations, and stores results in Postgres and Elasticsearch for further analysis.
+
+Technologies: Apache Flink, Kafka, PostgreSQL, Elasticsearch, Docker, Python
+
+Key Features:
+- Real-time financial transaction processing using Apache Flink
+- Data ingestion from Kafka
+- Aggregations and transformations on transaction streams
+- Data storage in Postgres for structured queries
+- Data indexing in Elasticsearch for analytics and visualization
+- Fully containerized setup using Docker Compose
+
+System Architecture:
+- Python Script (main.py): Generates and publishes sales transactions to Kafka
+- Kafka Consumers: Reads transaction data from Kafka
+- Flink (DataStreamJob.java): Processes, aggregates, and transforms streaming data
+- Postgres: Stores structured transaction data and analytics tables
+- Elasticsearch: Indexes transaction data for analytics and fast querying
+
+Links:
+- GitHub: https://github.com/NvkAnirudh/Real-Time-ECommerce-Sales-Analytics-Pipeline
+- Demo Article: https://deprojects.substack.com/p/real-time-e-commerce-analytics-with
+
+---
+
+PROJECT 3: DETERMINED DATA ENGINEERING PLATFORM
+Engineered end-to-end distributed data pipelines using PySpark, SQL, and Delta Lake achieving 5x performance improvement. ML-enhanced content platform with 200+ subscribers and 30K+ monthly impressions.
+
+Technologies: PySpark, Delta Lake, SQL, LangChain, OpenAI APIs
+
+Overview:
+DEtermined is a comprehensive data engineering education platform designed to help engineers master modern data infrastructure and practices. Through hands-on projects, in-depth articles, and practical guides, the platform covers everything from foundational concepts to advanced distributed systems architecture. With a focus on real-world applications, DEtermined bridges the gap between theory and practice, empowering data engineers to build production-grade systems with confidence.
+
+Key Features:
+- End-to-end distributed data pipelines using PySpark, SQL, and Delta Lake
+- ML-enhanced content recommendation system using LangChain and OpenAI APIs
+- 5x performance improvement through advanced tuning and optimization techniques
+- Interactive learning modules with hands-on projects and code examples
+- Production-grade system design patterns and best practices
+- Community-driven platform with 200+ active subscribers and 30K+ monthly impressions
+
+Newsletters:
+1. DE Projects: Hands-on data engineering projects covering real-world use cases, from batch processing to real-time streaming
+   Link: https://deprojects.substack.com/
+
+2. DE Prep: Interview preparation resources, system design guides, and technical deep-dives for aspiring data engineers
+   Link: https://deprep.substack.com/
+
+Website: https://determinedeng.com/
+
+---
+
+PROJECT HIGHLIGHTS & IMPACT:
+- Built production-ready systems with focus on scalability and performance
+- Achieved 5x performance improvements through advanced optimization
+- Created platforms serving 200+ active users with 30K+ monthly reach
+- Implemented real-time data processing pipelines handling high-volume transactions
+- Integrated cutting-edge AI/ML technologies (GPT-4o, LangChain, MCP)
+- Open-source contributions with detailed documentation
+- Full-stack capabilities from data pipelines to user-facing applications
+- Emphasis on automation, reducing manual effort by up to 80%
+
+All projects demonstrate strong software engineering practices, scalable architecture design, and practical application of modern data engineering and AI/ML technologies.

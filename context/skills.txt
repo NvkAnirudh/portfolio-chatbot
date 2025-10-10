@@ -1,0 +1,77 @@
+TECHNICAL SKILLS
+
+LANGUAGES & DATABASES:
+- Python: Advanced proficiency for data engineering, backend development, and AI/ML
+- R: Statistical computing and data visualization
+- SQL: Complex query optimization and database management
+- MySQL: Relational database management and optimization
+- PostgreSQL: Advanced database design and multi-tenant systems
+- SSMS (SQL Server Management Studio): Database administration and management
+
+DATA ENGINEERING:
+- ETL Development: Design and implementation of Extract, Transform, Load pipelines
+- Data Modeling: Dimensional modeling, schema design, and normalization
+- Data Warehousing: Architecture design and implementation
+- BigQuery: Google Cloud's serverless data warehouse
+- Amazon Redshift: Cloud data warehouse with partitioning and optimization
+- Snowflake: Cloud data platform for data warehousing
+- Dataflow: Stream and batch data processing
+- Apache Airflow: Workflow orchestration and scheduling
+- Airbyte: Open-source data integration platform
+- Apache Spark: Distributed data processing and analytics
+- PySpark: Python API for Apache Spark
+- Apache Kafka: Real-time data streaming and event processing
+- dbt (Data Build Tool): SQL-based transformation and data modeling
+- Dagster: Data orchestration platform
+- Delta Lake: Open-source storage layer with ACID transactions
+- AWS Glue: Serverless ETL service
+
+CLOUD & BI TOOLS:
+- AWS Services:
+  - Amazon EMR: Managed Hadoop framework for big data processing
+  - Amazon S3: Object storage for data lakes
+  - Amazon Athena: Serverless interactive query service
+  - AWS Glue: ETL and data catalog service
+  - Amazon RDS: Managed relational database service
+- Google Cloud Platform: Cloud computing services
+- Tableau: Business intelligence and data visualization
+- Power BI: Interactive visualizations and business analytics
+- Looker: Modern BI and analytics platform
+- Docker: Containerization and deployment
+- Flask: Python micro web framework
+- FastAPI: Modern, high-performance Python web framework
+- Redis: In-memory data structure store for caching
+
+MACHINE LEARNING & AI:
+- Deep Learning: Neural networks and advanced ML architectures
+- Computer Vision: Image processing and object detection
+- NLP (Natural Language Processing): Text analysis and language understanding
+- GenAI: Generative AI applications and implementations
+- LLMs: Large Language Model integration and fine-tuning
+- RAG (Retrieval-Augmented Generation): Context-aware AI systems
+- Fine-Tuning: Model adaptation and optimization
+- Mask R-CNN: Instance segmentation and object detection
+- LangChain: Framework for developing LLM applications
+- OpenAI APIs: GPT-4o, GPT-5 integration and implementation
+
+FULL-STACK DEVELOPMENT:
+- Next.js: React framework for production-ready applications
+- React: Component-based UI development
+- TypeScript: Type-safe JavaScript development
+- RESTful APIs: API design and implementation
+- Plaid & Setu: Financial data aggregation and account integrations
+- ReactFlow: Interactive node-based diagrams
+
+CORE COMPETENCIES:
+- Distributed data processing and pipeline optimization
+- Real-time streaming data architectures
+- Cloud-native application development
+- Multi-tenant database design
+- Workflow orchestration and automation
+- Performance tuning and cost optimization
+- Agentic AI system development
+- Text2SQL and natural language interfaces
+- Production ML/AI deployment
+- ETL/ELT pipeline development
+- Data warehouse architecture
+- Business intelligence and analytics

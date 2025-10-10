@@ -1,0 +1,107 @@
+PROFESSIONAL EXPERIENCE
+
+NIDHI AI
+Founding Engineer | Oct 2025 - Present
+
+Responsibilities & Achievements:
+- Architected production-ready PostgreSQL database schema supporting multi-tenant financial data management with account aggregator integrations (Plaid, Setu)
+- Built modular Text2SQL system with Agentic AI workflow using FastAPI and GPT-5, converting natural language to SQL queries with SQL injection protection, caching, and comprehensive error handling
+- Engineered containerized full-stack platform with Next.js, TypeScript, Docker orchestration, and interactive schema visualization using ReactFlow
+- Designed RESTful API architecture with multiple endpoints for production and debugging, featuring health monitoring, performance metrics, and parameterized query execution
+
+Technologies: PostgreSQL, FastAPI, GPT-5, Next.js, TypeScript, Docker, ReactFlow, Plaid, Setu
+
+---
+
+DETERMINED
+Data Engineer & Founder | Apr 2025 - Present
+
+Responsibilities & Achievements:
+- Architected and scaled a data engineering platform attracting 200+ Substack subscribers and 30K+ LinkedIn impressions monthly
+- Engineered end-to-end distributed data pipelines using PySpark, SQL, and Delta Lake, achieving 5x performance improvement through advanced tuning
+- Deployed ML-enhanced features using LangChain and OpenAI APIs, improving question classification and user engagement by 70% within 6 weeks
+
+Technologies: PySpark, SQL, Delta Lake, LangChain, OpenAI APIs, Python
+
+---
+
+STEALTH STARTUP
+Software Engineer, Data & AI Consultant | Jun 2025 - Aug 2025
+
+Responsibilities & Achievements:
+- Developed AI-powered events scheduling platform using GPT-4o achieving 95%+ accuracy while reducing manual data entry by 80%
+- Built full-stack application with React/TypeScript frontend and FastAPI/Python backend, delivering real-time event processing for 50+ sports organizations
+- Automated data pipeline supporting CSV/Excel/PDF ingestion with monitoring, plus widget generation system extracting brand assets from websites
+
+Technologies: GPT-4o, React, TypeScript, FastAPI, Python, CSV/Excel/PDF processing
+
+---
+
+ECONTENTI
+Data Engineer | Jan 2024 - Present
+
+Responsibilities & Achievements:
+- Designed scalable financial data pipeline using Python and Apache Airflow, reducing query time by 35% and driving $200K in productivity gains
+- Engineered 20+ dbt data models integrated within AWS Glue automated ETL workflows, minimizing time-to-insight by 25%
+- Optimized 15 critical data workflows with Dagster and Amazon EMR, saving 300+ hours annually
+- Managed Amazon Redshift partitioning cutting average SQL query runtimes by 40% and reducing cloud costs by 15%, achieving $50K in annual savings
+
+Technologies: Python, Apache Airflow, dbt, AWS Glue, Dagster, Amazon EMR, Amazon Redshift, SQL
+
+---
+
+ATC
+Data Engineer | Feb 2023 - Jan 2024
+
+Responsibilities & Achievements:
+- Reengineered ETL pipelines from Excel to Amazon RDS using Python, trimming data preparation time by 40%
+- Enhanced real-time data ingestion by deploying Apache Kafka on Amazon EMR, reducing latency by 20%
+- Improved ETL workflows by integrating Apache Airflow with AWS Glue, cutting process runtimes by 40%
+
+Technologies: Python, Amazon RDS, Apache Kafka, Amazon EMR, Apache Airflow, AWS Glue, ETL
+
+---
+
+INTAIN TECHNOLOGIES
+Data Scientist | Feb 2019 - Aug 2020
+
+Responsibilities & Achievements:
+- Executed Mask R-CNN model for document field extraction, raising accuracy to 97% and cutting monthly costs by $10K
+- Led automation of data entry workflows with Docker and Flask, scaling down manual effort by 80% and saving 200+ work hours monthly
+
+Technologies: Mask R-CNN, Python, Docker, Flask, Computer Vision, Deep Learning
+
+---
+
+CORE COMPETENCIES:
+
+Data Engineering:
+- ETL pipeline design and optimization
+- Distributed data processing (PySpark, Delta Lake)
+- Data warehouse management (Amazon Redshift)
+- Workflow orchestration (Apache Airflow, Dagster)
+- Real-time data ingestion (Apache Kafka)
+- Cloud data platforms (AWS Glue, Amazon EMR, Amazon RDS)
+
+AI/ML & Software Engineering:
+- Agentic AI systems and Text2SQL
+- LLM integration (GPT-4o, GPT-5, OpenAI APIs, LangChain)
+- Full-stack development (Next.js, React, TypeScript, FastAPI)
+- Computer vision (Mask R-CNN)
+- ML model deployment and production systems
+- Containerization and orchestration (Docker)
+
+Database & Architecture:
+- PostgreSQL database design and multi-tenant systems
+- SQL optimization and performance tuning
+- RESTful API architecture
+- Data modeling with dbt
+- Database schema design and normalization
+
+MEASURABLE IMPACT:
+- $250K+ in combined cost savings and productivity gains
+- 80% reduction in manual effort through automation
+- 95%+ accuracy in AI-powered systems
+- 200+ subscribers and 30K+ monthly impressions for DEtermined platform
+- 5x performance improvements in data pipelines
+- 70% improvement in user engagement metrics
