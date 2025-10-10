@@ -51,7 +51,9 @@ class ConversationManager:
             self.redis_client = redis.from_url(
                 self.redis_url,
                 decode_responses=True,
-                socket_connect_timeout=5
+                socket_connect_timeout=10,  # Increased for Railway's internal DNS
+                socket_keepalive=True,
+                health_check_interval=30
             )
             # Test connection
             self.redis_client.ping()
