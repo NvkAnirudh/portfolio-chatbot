@@ -18,6 +18,7 @@ class IntentClassifier:
     Classifies user queries into intents using keyword matching.
 
     Intent Categories:
+    - normal: Casual conversation, small talk, "how are you", chitchat
     - greeting: Hello, hi, hey
     - skills: Technical skills, tech stack, languages, tools
     - experience: Work history, jobs, roles, companies
@@ -41,9 +42,18 @@ class IntentClassifier:
 
         # Keyword patterns for fallback
         self.intent_patterns = {
+            "normal": [
+                "how are you", "how are you doing", "how's it going", "hows it going",
+                "how have you been", "what's up", "whats up", "sup", "wassup",
+                "how do you feel", "are you okay", "doing well", "doing good",
+                "nice to meet you", "pleasure to meet", "thank you", "thanks",
+                "appreciate it", "cool", "awesome", "great", "nice", "interesting",
+                "that's great", "thats great", "good to know", "i see", "okay",
+                "alright", "sounds good", "makes sense", "got it", "understood"
+            ],
             "greeting": [
                 "hello", "hi", "hey", "greetings", "good morning", "good afternoon",
-                "good evening", "howdy", "what's up", "whats up", "sup"
+                "good evening", "howdy"
             ],
             "skills": [
                 "skill", "skills", "technology", "technologies", "tech stack",
@@ -102,7 +112,8 @@ class IntentClassifier:
                 messages=[{
                     "role": "user",
                     "content": f"""Classify this user message into one or more of these intents:
-- greeting: Greetings, hello, hi
+- normal: Casual conversation, small talk (e.g., "how are you?", "what's up?", "nice!", "thanks", "cool")
+- greeting: Initial greetings only (e.g., "hello", "hi", "hey")
 - skills: Questions about technical skills, technologies, programming languages, expertise
 - experience: Questions about work history, jobs, companies, professional experience
 - projects: Questions about portfolio projects, what was built, GitHub, demos
@@ -112,9 +123,10 @@ class IntentClassifier:
 
 User message: "{message}"
 
-Return ONLY the intent names as a comma-separated list (e.g., "skills,general" or "contact" or "greeting,general").
+Return ONLY the intent names as a comma-separated list (e.g., "skills,general" or "contact" or "normal").
+IMPORTANT: If the message is casual conversation like "how are you?" or small talk, classify it as "normal".
 If the message is asking how to contact/reach out/get in touch/email, classify it as "contact".
-Return maximum 3 intents, ordered by relevance."""
+Return maximum 2 intents, ordered by relevance."""
                 }]
             )
 
@@ -123,7 +135,7 @@ Return maximum 3 intents, ordered by relevance."""
             intents = [intent.strip() for intent in intents_str.split(",")]
 
             # Validate intents
-            valid_intents = ["greeting", "skills", "experience", "projects", "education", "contact", "general"]
+            valid_intents = ["normal", "greeting", "skills", "experience", "projects", "education", "contact", "general"]
             filtered_intents = [i for i in intents if i in valid_intents]
 
             if not filtered_intents:
@@ -222,7 +234,7 @@ Return maximum 3 intents, ordered by relevance."""
         """
         Determine if context files should be loaded for this intent.
 
-        Greetings typically don't need full context.
+        Normal conversations and greetings don't need full context.
 
         Args:
             intent: Detected intent
@@ -230,8 +242,8 @@ Return maximum 3 intents, ordered by relevance."""
         Returns:
             True if context should be loaded
         """
-        # Greetings don't need context files
-        return intent != "greeting"
+        # Normal conversations and greetings don't need context files
+        return intent not in ["normal", "greeting"]
 
     def map_intent_to_context_files(self, intents: List[str]) -> List[str]:
         """
@@ -246,9 +258,12 @@ Return maximum 3 intents, ordered by relevance."""
         context_files = set()
 
         for intent in intents:
-            if intent == "greeting":
-                # Just general info for greetings
-                context_files.add("general")
+            if intent == "normal":
+                # No context needed for casual conversation
+                pass
+            elif intent == "greeting":
+                # No context for greetings either
+                pass
             elif intent == "skills":
                 context_files.add("skills")
                 context_files.add("general")

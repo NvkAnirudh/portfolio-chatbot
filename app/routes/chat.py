@@ -138,13 +138,19 @@ async def chat(
             )
 
         # Step 3: Load portfolio context based on intents
+        # For "normal" casual conversations, this will return empty string
         portfolio_context = context_loader.get_context_for_intents(
             intents=intents,
             use_cache=True,
             include_headers=True
         )
 
-        logger.info(f"Loaded context: {len(portfolio_context)} characters")
+        # If context is empty (e.g., for "normal" intent), pass None to LLM
+        if not portfolio_context or portfolio_context.strip() == "":
+            portfolio_context = None
+            logger.info("No context loaded (casual conversation mode)")
+        else:
+            logger.info(f"Loaded context: {len(portfolio_context)} characters")
 
         # Step 4: Get conversation history
         conversation_history = conversation_manager.format_history_for_llm(
