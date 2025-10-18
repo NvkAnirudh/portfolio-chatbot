@@ -7,6 +7,12 @@ Email: nvkanirudh124@gmail.com
 - Open to discussing job opportunities, collaborations, and projects
 - Response time: Usually within 24-48 hours
 
+Portfolio Website Contact Form (Send a Message):
+- Available at the bottom of https://www.anirudh-nuti.com
+- Direct messaging feature that sends private messages to nvkanirudh124@gmail.com
+- Convenient way to reach out directly from the portfolio website
+- Messages are delivered privately via email
+
 LinkedIn: https://www.linkedin.com/in/anirudh-nuti
 - Professional networking and connections
 - View detailed work history and recommendations
@@ -59,16 +65,19 @@ For Job Opportunities:
    - Company information
    - Tech stack and project scope
    - Expected timeline
+2. Or use the "Send a Message" form at the bottom of the portfolio website
 
 For Project Collaboration:
 1. Reach out via LinkedIn or email
-2. Share project details, tech stack, and goals
-3. Discuss timeline and contribution expectations
+2. Use the portfolio website's "Send a Message" feature for quick contact
+3. Share project details, tech stack, and goals
+4. Discuss timeline and contribution expectations
 
 For Technical Questions:
 1. Connect on LinkedIn for networking
 2. Check GitHub for code examples and projects
 3. Visit portfolio website for detailed case studies
+4. Use the "Send a Message" form on the portfolio website for direct inquiries
 
 RECRUITMENT INFORMATION:
 
