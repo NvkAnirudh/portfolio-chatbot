@@ -1,6 +1,55 @@
 PROJECT PORTFOLIO
 
-PROJECT 1: LINKEDIN POST GENERATOR
+PROJECT 1: YC EXTRACTOR AND JOB APPLICATION TRACKER
+Date: Nov 2025
+An automated job application tracker that scrapes Y Combinator's "Work at a Startup" company pages, extracts job postings, and generates personalized application messages using Claude AI.
+
+Technologies: Python, Selenium, Claude AI, Google Sheets API
+
+Key Features:
+- Company Page Scraping: Automatically scrapes YC company pages using Selenium
+- Founder Information: Extracts founder names and LinkedIn profiles
+- Job Listings: Displays all available positions with interactive selection
+- AI-Powered Messages: Generates personalized 500-character application messages using Claude
+- Google Sheets Integration: Automatically saves all data to Google Sheets
+- Continuous Processing: Process multiple companies in one session
+- Duplicate Detection: Prevents duplicate job entries
+
+Links:
+- GitHub: https://github.com/NvkAnirudh/yc_extractor_and_tracker
+
+---
+
+PROJECT 2: DETERMINED DATA ENGINEERING PLATFORM
+Date: Apr 2025
+Engineered end-to-end distributed data pipelines using PySpark, SQL, and Delta Lake achieving 5x performance improvement. ML-enhanced content platform with 200+ subscribers and 30K+ monthly impressions.
+
+Technologies: PySpark, Delta Lake, SQL, LangChain, OpenAI APIs
+
+Overview:
+DEtermined is a comprehensive data engineering education platform designed to help engineers master modern data infrastructure and practices. Through hands-on projects, in-depth articles, and practical guides, the platform covers everything from foundational concepts to advanced distributed systems architecture. With a focus on real-world applications, DEtermined bridges the gap between theory and practice, empowering data engineers to build production-grade systems with confidence.
+
+Key Features:
+- End-to-end distributed data pipelines using PySpark, SQL, and Delta Lake
+- ML-enhanced content recommendation system using LangChain and OpenAI APIs
+- 5x performance improvement through advanced tuning and optimization techniques
+- Interactive learning modules with hands-on projects and code examples
+- Production-grade system design patterns and best practices
+- Community-driven platform with 200+ active subscribers and 30K+ monthly impressions
+
+Newsletters:
+1. DE Projects: Hands-on data engineering projects covering real-world use cases, from batch processing to real-time streaming
+   Link: https://deprojects.substack.com/
+
+2. DE Prep: Interview preparation resources, system design guides, and technical deep-dives for aspiring data engineers
+   Link: https://deprep.substack.com/
+
+Website: https://determinedeng.com/
+
+---
+
+PROJECT 3: LINKEDIN POST GENERATOR
+Date: Mar 2025
 A Model Context Protocol (MCP) server that automates generating professional LinkedIn post drafts from YouTube videos. Streamlines content repurposing by extracting transcripts, summarizing content, and generating engaging LinkedIn posts.
 
 Technologies: MCP, Python, YouTube API, OpenAI, LLM
@@ -28,7 +77,8 @@ Links:
 
 ---
 
-PROJECT 2: REAL-TIME E-COMMERCE SALES ANALYTICS PIPELINE
+PROJECT 4: REAL-TIME E-COMMERCE SALES ANALYTICS PIPELINE
+Date: Jan 2025
 An Apache Flink application designed for real-time sales analytics in an E-Commerce setting. Processes financial transaction data from Kafka, performs aggregations, and stores results in Postgres and Elasticsearch for further analysis.
 
 Technologies: Apache Flink, Kafka, PostgreSQL, Elasticsearch, Docker, Python
@@ -51,33 +101,6 @@ System Architecture:
 Links:
 - GitHub: https://github.com/NvkAnirudh/Real-Time-ECommerce-Sales-Analytics-Pipeline
 - Demo Article: https://deprojects.substack.com/p/real-time-e-commerce-analytics-with
-
----
-
-PROJECT 3: DETERMINED DATA ENGINEERING PLATFORM
-Engineered end-to-end distributed data pipelines using PySpark, SQL, and Delta Lake achieving 5x performance improvement. ML-enhanced content platform with 200+ subscribers and 30K+ monthly impressions.
-
-Technologies: PySpark, Delta Lake, SQL, LangChain, OpenAI APIs
-
-Overview:
-DEtermined is a comprehensive data engineering education platform designed to help engineers master modern data infrastructure and practices. Through hands-on projects, in-depth articles, and practical guides, the platform covers everything from foundational concepts to advanced distributed systems architecture. With a focus on real-world applications, DEtermined bridges the gap between theory and practice, empowering data engineers to build production-grade systems with confidence.
-
-Key Features:
-- End-to-end distributed data pipelines using PySpark, SQL, and Delta Lake
-- ML-enhanced content recommendation system using LangChain and OpenAI APIs
-- 5x performance improvement through advanced tuning and optimization techniques
-- Interactive learning modules with hands-on projects and code examples
-- Production-grade system design patterns and best practices
-- Community-driven platform with 200+ active subscribers and 30K+ monthly impressions
-
-Newsletters:
-1. DE Projects: Hands-on data engineering projects covering real-world use cases, from batch processing to real-time streaming
-   Link: https://deprojects.substack.com/
-
-2. DE Prep: Interview preparation resources, system design guides, and technical deep-dives for aspiring data engineers
-   Link: https://deprep.substack.com/
-
-Website: https://determinedeng.com/
 
 ---
 
