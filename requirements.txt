@@ -2,8 +2,20 @@
 fastapi==0.115.0
 uvicorn[standard]==0.32.1
 
-# LLM
-anthropic==0.43.0
+# LLM & Embeddings
+anthropic>=0.75.0
+
+# LlamaIndex
+llama-index==0.14.8
+llama-index-llms-anthropic==0.10.3
+llama-index-embeddings-openai
+llama-index-vector-stores-weaviate==1.4.1
+
+# Vector Store
+weaviate-client==4.18.2
+
+# OpenAI (for embeddings)
+openai
 
 # Databases
 redis==5.2.1
@@ -18,7 +30,7 @@ slowapi==0.1.9
 
 # Core
 python-dotenv==1.0.1
-pydantic==2.10.5
+pydantic>=2.11.5
 pydantic-settings==2.7.0
 
 # HTTP Client

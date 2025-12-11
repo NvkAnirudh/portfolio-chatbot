@@ -1,0 +1,26 @@
+Let's build 𝗮𝗴𝗲𝗻𝘁 𝗺𝗲𝗺𝗼𝗿𝘆 with LlamaIndex + Weaviate + Gemini 👀
+
+This recipe notebook walks through building persistent memory for AI agents using three components: LlamaIndex (orchestration), Weaviate (vector storage), and Gemini (LLM + embeddings)
+See it here: https://lnkd.in/dTpW9sp3
+
+LlamaIndex orchestrates memory through three distinct memory blocks:
+1️⃣ 𝗦𝘁𝗮𝘁𝗶𝗰𝗠𝗲𝗺𝗼𝗿𝘆𝗕𝗹𝗼𝗰𝗸: Stores fixed information (e.g., "User's name is Sam")
+2️⃣ 𝗙𝗮𝗰𝘁𝗘𝘅𝘁𝗿𝗮𝗰𝘁𝗶𝗼𝗻𝗠𝗲𝗺𝗼𝗿𝘆𝗕𝗹𝗼𝗰𝗸: Automatically extracts structured facts from conversations (e.g., "User is vegetarian," "User likes potatoes")
+3️⃣ 𝗩𝗲𝗰𝘁𝗼𝗿𝗠𝗲𝗺𝗼𝗿𝘆𝗕𝗹𝗼𝗰𝗸: Stores conversation chunks as embeddings in Weaviate for semantic retrieval
+
+When your chat history exceeds a configurable token threshold, chunks of conversation get embedded using Gemini's 'text-embedding-004' model and stored in Weaviate with a session_id to track different conversations.
+
+Later, when you send a new message, the system searches Weaviate for relevant past conversation chunks and injects them back into the context window. This means your agent can remember details from previous sessions.
+
+𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗳𝗿𝗼𝗺 𝘁𝗵𝗲 𝗻𝗼𝘁𝗲𝗯𝗼𝗼𝗸:
+In Session 1, the user mentions being vegetarian and wanting potato dishes. The agent suggests Vegetarian Shepherd's Pie.
+In Session 2 (a completely new session), the user says "I'm hungry again but I don't want to make the same dish as last time."
+
+The agent retrieves the relevant conversation chunk from Weaviate and responds with new suggestions that avoid Shepherd's Pie - proving it remembered the previous session.
+
+The implementation uses:
+
+- 𝗚𝗲𝗺𝗶𝗻𝗶 𝟮.𝟱 𝗙𝗹𝗮𝘀𝗵 as the LLM
+- 𝗚𝗲𝗺𝗶𝗻𝗶 𝘁𝗲𝘅𝘁-𝗲𝗺𝗯𝗲𝗱𝗱𝗶𝗻𝗴-𝟬𝟬𝟰 for embeddings
+- 𝗪𝗲𝗮𝘃𝗶𝗮𝘁𝗲 𝗖𝗹𝗼𝘂𝗱 for vector storage
+- 𝗟𝗹𝗮𝗺𝗮𝗜𝗻𝗱𝗲𝘅'𝘀 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻𝗔𝗴𝗲𝗻𝘁 for orchestration
